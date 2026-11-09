@@ -1,10 +1,11 @@
 :root {
-    --warna-utama: #aad2ea;
+    --warna-utama: #d5f0ff;
     --warna-latar: #f5f6fa;
+    --warna-teks-navbar: #0e2434;
 }
 
 body {
-    background-image: url('../assets/bg.jpg');
+    background-image: url('/assets/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,25 +21,76 @@ main {
 }
 
 .navbar {
-    background-color: var(--warna-utama) !important;
+    background-color: rgba(205, 237, 255, 0.82) !important;
+}
+
+
+.navbar.navbar-dark .navbar-brand,
+.navbar.navbar-dark .navbar-nav .nav-link {
+    color: var(--warna-teks-navbar);
+}
+
+.navbar.navbar-dark .navbar-nav .nav-link:hover,
+.navbar.navbar-dark .navbar-nav .nav-link:focus {
+    color: #000;
 }
 
 .card {
+    background-color: var(--warna-utama);
     border: none;
     border-radius: 12px;
     border-color: rgb(2, 2, 2);
     transition: transform 0.2s;
 }
 
+.list-group-item{
+    background-color: var(--warna-utama);
+    border: none;
+}
+
+.login-card,
+.profile-biodata {
+    background-color: rgba(213, 240, 255, 0.82);
+}
+
+.profile-summary {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.progress-card {
+    background-color: var(--warna-utama);
+}
+
+.progress-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.progress-track {
+    width: 90%;
+    max-width: 420px;
+    margin: 0 auto;
+    background-color: #eaf4fb;
+}
+
+.progress-track .progress-bar {
+    background-color: #3f6578;
+}
+
 .card:hover {
     transform: translateY(-4px);
 }
 
-.table thead {
-    background-color: var(--warna-utama);
-    color: white;
+
+.table thead th {
+    --bs-table-bg: var(--warna-utama);
+    --bs-table-color: var(--warna-teks-navbar);
 }
 
 footer {
-    background-color: rgb(220, 244, 254);
+    background-color: rgba(205, 237, 255, 0.82)
 }

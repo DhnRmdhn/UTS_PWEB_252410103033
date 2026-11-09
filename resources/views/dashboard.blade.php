@@ -38,10 +38,10 @@
 
     <div class="row g-3 mt-2 justify-content-center">
         <div class="col-md-5">
-            <div class="card h-100">
+            <div class="card h-100 progress-card">
                 <div class="card-body">
-                    <h6 class="text-muted">Progress Tugas</h6>
-                    <div class="progress" style="height: 24px;">
+                    <h6 class="text-muted text-center">Progress Tugas</h6>
+                    <div class="progress progress-track" style="height: 24px;">
                         <div class="progress-bar" style="width: {{ $persen }}%">{{ $persen }}%</div>
                     </div>
                 </div>

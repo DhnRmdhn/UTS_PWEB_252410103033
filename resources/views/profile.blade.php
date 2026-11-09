@@ -6,17 +6,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
 
-            <div class="card shadow-sm text-center mb-4">
+            <div class="card shadow-sm profile-biodata text-center mb-4 profile-summary">
                 <div class="card-body p-4">
                     <img src="{{ asset('assets/foto.jpg') }}" alt="Foto profil"
                          class="rounded-circle mb-3"
-                         style="width: 120px; height: 120px; object-fit: cover;">
+                         style="width: 96px; height: 96px; object-fit: cover;">
                     <h4 class="mb-1">{{ $username }}</h4>
                     <p class="text-muted mb-0">NIM: {{ $nim }}</p>
                 </div>
             </div>
 
-            <div class="card shadow-sm">
+            <div class="card shadow-sm profile-biodata">
                 <div class="card-body p-4">
                     <h6 class="text-muted mb-3">Biodata</h6>
                     <ul class="list-group list-group-flush">

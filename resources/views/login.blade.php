@@ -4,7 +4,7 @@
 @section('content')
 <div class="row justify-content-center align-items-center" style="min-height: 70vh;">
     <div class="col-md-5">
-        <div class="card shadow-sm">
+        <div class="card shadow-sm login-card">
             <div class="card-body p-4">
                 <h4 class="mb-3">Masuk</h4>
                 <form action="{{ route('login.proses') }}" method="POST">
