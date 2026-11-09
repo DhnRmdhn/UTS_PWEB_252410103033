@@ -1,0 +1,38 @@
+:root {
+    --warna-utama: #4f46e5;
+    --warna-latar: #f5f6fa;
+}
+
+body {
+    background-color: var(--warna-latar);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    background-color: var(--warna-utama) !important;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.table thead {
+    background-color: var(--warna-utama);
+    color: white;
+}
+
+footer {
+    background-color: white;
+}

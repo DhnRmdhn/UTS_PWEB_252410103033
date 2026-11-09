@@ -7,6 +7,7 @@
             <a class="nav-link" href="{{ route('dashboard', ['username' => $username, 'nim' => $nim]) }}">Dashboard</a>
             <a class="nav-link" href="{{ route('pengelolaan', ['username' => $username, 'nim' => $nim]) }}">Pengelolaan</a>
             <a class="nav-link" href="{{ route('profile', ['username' => $username, 'nim' => $nim]) }}">Profil</a>
+            <a class="nav-link" href="{{ route('login') }}">Logout</a>
         </div>
     </div>
 </nav>

@@ -35,4 +35,33 @@
             </div>
         </div>
     </div>
+
+    <div class="row g-3 mt-2 justify-content-center">
+        <div class="col-md-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h6 class="text-muted">Progress Tugas</h6>
+                    <div class="progress" style="height: 24px;">
+                        <div class="progress-bar" style="width: {{ $persen }}%">{{ $persen }}%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h6 class="text-muted">Deadline Terdekat</h6>
+                    <ul class="list-group list-group-flush">
+                        @foreach ($terdekat as $item)
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>{{ $item['tugas'] }} <br> <small class="text-muted">({{ $item['matkul'] }})</small></span>
+                                <span class="badge bg-danger text-nowrap px-3 py-2">{{ $item['deadline'] }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

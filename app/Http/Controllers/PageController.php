@@ -21,12 +21,19 @@ class PageController extends Controller
 
     public function dashboard(Request $request)
     {
+        $tugas = $this->dataTugas();
+        $total = count($tugas);
+        $selesai = count(array_filter($tugas, fn($t) => $t['status'] == 'Selesai'));
+        $belum = array_values(array_filter($tugas, fn($t) => $t['status'] != 'Selesai'));
+
         return view('dashboard', [
             'username' => $request->query('username'),
             'nim' => $request->query('nim'),
-            'jumlahTugas' => 4,
-            'selesai' => 1,
-            'deadlineTerdekat' => 'Pemrograman Website',
+            'jumlahTugas' => $total,
+            'selesai' => $selesai,
+            'persen' => round($selesai / $total * 100),
+            'deadlineTerdekat' => $belum[0]['matkul'] ?? 'Semua selesai',
+            'terdekat' => array_slice($belum, 0, 3),
         ]);
     }
 
@@ -35,22 +42,34 @@ class PageController extends Controller
         return view('profile', [
             'username' => $request->query('username'),
             'nim' => $request->query('nim'),
+            'biodata' => [
+                'Program Studi' => 'Informatika',
+                'Semester' => '3',
+                'Kelas' => 'C',
+           ],
         ]);
     }
 
     public function pengelolaan(Request $request)
     {
-        $tugas = [
-            ['matkul' => 'Pemrograman Web', 'tugas' => 'UTS Laravel', 'deadline' => '10 Nov 2026', 'status' => 'Dikerjakan'],
-            ['matkul' => 'ADPL', 'tugas' => 'Class Diagram', 'deadline' => '12 Nov 2026', 'status' => 'Belum'],
-            ['matkul' => 'PBO', 'tugas' => 'Proyek Agroindustri', 'deadline' => '15 Nov 2026', 'status' => 'Belum'],
-            ['matkul' => 'Basis Data', 'tugas' => 'ERD', 'deadline' => '8 Nov 2026', 'status' => 'Selesai'],
-        ];
-
         return view('pengelolaan', [
             'username' => $request->query('username'),
             'nim' => $request->query('nim'),
-            'tugas' => $tugas,
+            'tugas' => $this->dataTugas(),
         ]);
+    }
+
+    private function dataTugas()
+    {
+        return [
+            ['matkul' => 'Pemrograman Website', 'tugas' => 'UTS Laravel', 'deadline' => '10 Nov 2026', 'status' => 'Selesai'],
+            ['matkul' => 'Pemrograman Fungsional', 'tugas' => 'Progress Projek Akhir', 'deadline' => '10 Nov 2026', 'status' => 'Dikerjakan'],
+            ['matkul' => 'Pertanian Industrial Berkelanjutan', 'tugas' => 'Presentasi', 'deadline' => '10 Nov 2026', 'status' => 'Selesai'],
+            ['matkul' => 'Pemrograman Website', 'tugas' => 'Progress Projek Akhir', 'deadline' => '11 Nov 2026', 'status' => 'Dikerjakan'],
+            ['matkul' => 'PBO', 'tugas' => 'Progress Projek Akhir', 'deadline' => '12 Nov 2026', 'status' => 'Dikerjakan'],
+            ['matkul' => 'ADPL', 'tugas' => 'Sequence Diagram', 'deadline' => '12 Nov 2026', 'status' => 'Dikerjakan'],
+            ['matkul' => 'Grafika Komputer', 'tugas' => 'Progress Projek Akhir', 'deadline' => '12 Nov 2026', 'status' => 'Belum'],
+            ['matkul' => 'MKSI', 'tugas' => 'Final Projek Akhir', 'deadline' => '13 Nov 2026', 'status' => 'Belum'],
+        ];
     }
 }
