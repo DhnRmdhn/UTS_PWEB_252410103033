@@ -10,8 +10,12 @@
                 <form action="{{ route('login.proses') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
+                        <label for="username" class="form-label">nama</label>
                         <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                     <div class="mb-3">
+                        <label for="nim" class="form-label">nim</label>
+                        <input type="text" class="form-control" id="nim" name="nim" required>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>

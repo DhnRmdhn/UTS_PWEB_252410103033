@@ -13,9 +13,9 @@ class PageController extends Controller
 
     public function prosesLogin(Request $request)
     {
-        $username = $request->input('username');
         return redirect()->route('dashboard', [
-            'username' => $username
+            'username' => $request->input('username'),
+            'nim' => $request->input('nim'),
         ]);
     }
 
@@ -23,6 +23,7 @@ class PageController extends Controller
     {
         return view('dashboard', [
             'username' => $request->query('username'),
+            'nim' => $request->query('nim'),
             'jumlahTugas' => 4,
             'selesai' => 1,
             'deadlineTerdekat' => 'Pemrograman Website',
@@ -33,6 +34,7 @@ class PageController extends Controller
     {
         return view('profile', [
             'username' => $request->query('username'),
+            'nim' => $request->query('nim'),
         ]);
     }
 
@@ -47,6 +49,7 @@ class PageController extends Controller
 
         return view('pengelolaan', [
             'username' => $request->query('username'),
+            'nim' => $request->query('nim'),
             'tugas' => $tugas,
         ]);
     }
