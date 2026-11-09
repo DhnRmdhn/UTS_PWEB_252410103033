@@ -2,7 +2,7 @@
 @section('title', 'Login')
 
 @section('content')
-<div class="row justify-content-center">
+<div class="row justify-content-center align-items-center" style="min-height: 70vh;">
     <div class="col-md-5">
         <div class="card shadow-sm">
             <div class="card-body p-4">

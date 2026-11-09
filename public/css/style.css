@@ -1,9 +1,14 @@
 :root {
-    --warna-utama: #4f46e5;
+    --warna-utama: #aad2ea;
     --warna-latar: #f5f6fa;
 }
 
 body {
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: var(--warna-latar);
     min-height: 100vh;
     display: flex;
@@ -21,6 +26,7 @@ main {
 .card {
     border: none;
     border-radius: 12px;
+    border-color: rgb(2, 2, 2);
     transition: transform 0.2s;
 }
 
@@ -34,5 +40,5 @@ main {
 }
 
 footer {
-    background-color: white;
+    background-color: rgb(220, 244, 254);
 }
