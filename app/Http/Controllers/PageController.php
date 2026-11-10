@@ -58,7 +58,7 @@ class PageController extends Controller
             'tugas' => $this->dataTugas(),
         ]);
     }
-
+    
     private function dataTugas()
     {
         return [

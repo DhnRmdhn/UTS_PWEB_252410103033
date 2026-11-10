@@ -3,7 +3,7 @@
 @section('title', 'Pengelolaan')
 
 @section('content')
-    <h3 class="mb-4 text-center">Daftar Tugas</h3>
+    <h3 class="mb-4 text-center">Daftar Tugas {{ $username }}</h3>
 
     <div class="table-responsive">
         <table class="table table-striped align-middle">
