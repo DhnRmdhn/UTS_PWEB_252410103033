@@ -45,7 +45,7 @@ class PageController extends Controller
             'biodata' => [
                 'Program Studi' => 'Informatika',
                 'Semester' => '3',
-                'Kelas' => 'C',
+                'Kelas' => 'F',
            ],
         ]);
     }
