@@ -4,9 +4,11 @@
 @section('content')
 <div class="row justify-content-center align-items-center" style="min-height: 70vh;">
     <div class="col-md-5">
+        <h1 class="text-center" >Selamat datang di tugasmu</h1>
+        <h4 class="text-center " style = "color: #001f61; min-height: 5vh;">tempat daftar tugas mu dicatat</h4>
         <div class="card shadow-sm login-card">
             <div class="card-body p-4">
-                <h4 class="mb-3">Masuk</h4>
+                <h4 class="mb-3">Masuk ke tugasmu</h4>
                 <form action="{{ route('login.proses') }}" method="POST">
                     @csrf
                     <div class="mb-3">
